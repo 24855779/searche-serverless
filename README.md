@@ -49,7 +49,7 @@ npm run build
    - 在AWS控制台中选择S3服务，创建一个Bucket，设置公有访问权限。
    - 开启静态网站托管服务，设置索引文档为：index.html，生成的终端节点地址。
    - 将打包的生产文件上传到S3的Bucket中，设置所有对象的公共访问权限，并使用标准存储类别。
-   - 可通过终端节点访问搜索网站的服务：[http://sousuo-serverless.s3-website-us-east-1.amazonaws.com/](http://search-serverless.s3-website-us-east-1.amazonaws.com/)。
+   - 可通过终端节点访问搜索网站的服务：[http://search-serverless.s3-website-us-east-1.amazonaws.com/](http://search-serverless.s3-website-us-east-1.amazonaws.com/)。
 
 2. **创建Lambda函数**
 
