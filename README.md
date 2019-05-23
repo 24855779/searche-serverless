@@ -4,20 +4,48 @@
 
 ​	基于AWS Lambda、S3、DynamoDB构建一套的serverless架构。静态页面内容部署到Amazon S3上，业务逻辑处理使用Lambda函数。当用户请求时通过API Gateway来触发Lambda函数，从DynamoDB中读取相应的商品数据，返回在页面显示。
 
-![架构图](/Users/vincent/Desktop/架构图.png)
+serverless架构图：
 
-​																										图1：系统架构图
+![avatar](https://s3.amazonaws.com/sousuo-serverless/Architecture+diagram.png)
 
-## Install
+# 前端页面部分
+
+技术栈：VUE全家桶
+
+实现功能：实现了简易的商品搜索及列表展示功能
+
+前端使用说明：
+
+- 安装依赖
+
+```
+npm install
+```
+
+- 本地服务启动
+
+```
+npm run serve
+```
+
+- 打包生产文件
+
+```
+npm run build
+```
+
+
+
+# 项目部署
 
 要求：您需要一个AWS账号。
 
 1. 创建静态页面托管服务
 
    - 在AWS控制台中选择S3服务，创建一个Bucket，设置公有访问权限。
-   - 开启静态网站托管服务，设置索引文档为：index.html，生成的终端节点地址：[http://sousuo-serverless.s3-website-us-east-1.amazonaws.com/](http://sousuo-serverless.s3-website-us-east-1.amazonaws.com/)。
-   - 将发布版本dist文件中的代码文件上传到S3的Bucket中，设置所有对象的公共访问权限，并使用标准存储类别。
-   - 通过终端节点访问静态网站。
+   - 开启静态网站托管服务，设置索引文档为：index.html，生成的终端节点地址。
+   - 将打包的生产文件上传到S3的Bucket中，设置所有对象的公共访问权限，并使用标准存储类别。
+   - 可通过终端节点访问搜索网站的服务：[http://sousuo-serverless.s3-website-us-east-1.amazonaws.com/](http://sousuo-serverless.s3-website-us-east-1.amazonaws.com/)。
 
 2. 创建Lambda函数
 
