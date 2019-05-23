@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-​	基于AWS Lambda、S3、DynamoDB构建一套的serverless架构。静态页面内容部署到Amazon S3上，业务逻辑处理使用Lambda函数。当用户请求时通过API Gateway来触发Lambda函数，从DynamoDB中读取相应的商品数据，返回在页面显示。
+​	基于AWS Lambda、S3、DynamoDB构建一套的serverless架构。静态页面内容部署到Amazon S3上，业务逻辑处理使用Lambda函数。当用户请求时通过API Gateway来触发Lambda函数，从DynamoDB中读取键字相应的数据，返回在页面显示。
 
 serverless架构图：
 
@@ -16,7 +16,7 @@ VUE全家桶
 
 **实现功能：**
 
-实现了简易的商品搜索及列表展示功能
+实现了简易的关键字搜索及列表展示功能
 
 **前端使用说明：**
 
@@ -55,13 +55,13 @@ npm run build
 
    创建了4个函数作为业务逻辑处理：
 
-   searchKey：根据关键字搜索商品名臣
+   searchKey：根据关键字搜索相关内容
 
-   productList：商品列表
+   productList：相关条目列表
 
-   getProductDetail：获取商品信息详细页
+   getProductDetail：获取关键字信息详细页
 
-   addProduct：添加商品数据
+   addProduct：添加相关信息数据
 
    创建Lambda函数时，通过IAM角色来授予访问其他资源的权限。创建API Gateway触发器，通过API Gateway触发函数执行业务逻辑。
 
@@ -71,4 +71,4 @@ npm run build
 
 4. **创建DynomoDB存储数据**
 
-   在控制台上创建DynamoDB表，用于存放商品数据。
+   在控制台上创建DynamoDB表，用于存放内容数据。
